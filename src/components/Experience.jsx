@@ -75,7 +75,7 @@ export default function Experience() {
                   </div>
                 </div>
 
-                <p style={{ color: '#cbd5e1', fontSize: '0.98rem', lineHeight: '1.65' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', lineHeight: '1.65' }}>
                   {exp.description}
                 </p>
 

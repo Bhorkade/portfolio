@@ -66,11 +66,11 @@ export default function Certifications() {
                   <CertIcon size={22} />
                 </div>
                 <div style={{ flexGrow: 1 }}>
-                  <span className="code-font" style={{ fontSize: '0.75rem', color: '#8b5cf6' }}>
+                  <span className="code-font" style={{ fontSize: '0.75rem', color: 'var(--accent-primary)' }}>
                     {cert.category}
                   </span>
                   <h3 className="cert-title">{cert.title}</h3>
-                  <p style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: '1.5', marginTop: '6px' }}>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.5', marginTop: '6px' }}>
                     {cert.description}
                   </p>
                   <div

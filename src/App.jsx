@@ -1,4 +1,6 @@
 import React from 'react';
+import { ThemeProvider } from './context/ThemeContext';
+import { SectionProvider } from './context/SectionContext';
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -14,28 +16,32 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="portfolio-app-root">
-      {/* Smooth trailing custom cursor */}
-      <CustomCursor />
+    <ThemeProvider>
+      <SectionProvider>
+        <div className="portfolio-app-root">
+          {/* Smooth trailing custom cursor */}
+          <CustomCursor />
 
-      {/* Sticky glassmorphic navbar */}
-      <Navbar />
+          {/* Sticky pill navbar */}
+          <Navbar />
 
-      {/* Main Sections */}
-      <main id="main-content">
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Education />
-        <Certifications />
-        <Resume />
-        <Contact />
-      </main>
+        {/* Main Sections */}
+        <main id="main-content">
+          <Hero />
+          <Projects />
+          <About />
+          <Skills />
+          <Experience />
+          <Education />
+          <Certifications />
+          <Resume />
+          <Contact />
+        </main>
 
-      {/* Footer */}
-      <Footer />
-    </div>
+        {/* Footer */}
+        <Footer />
+      </div>
+      </SectionProvider>
+    </ThemeProvider>
   );
 }

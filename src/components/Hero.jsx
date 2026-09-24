@@ -6,6 +6,7 @@ import {
   Terminal,
   Code2,
   Check,
+  ArrowUpRight,
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, LeetcodeIcon } from './Icons';
 
@@ -33,35 +34,51 @@ export default function Hero() {
 
   return (
     <section id="hero" className="hero-section">
+      {/* Decorative Geometric Elements from Screenshot */}
+      <div className="hero-geom-square sq-1" aria-hidden="true"></div>
+      <div className="hero-geom-square sq-2" aria-hidden="true"></div>
+      <div className="hero-geom-square sq-3" aria-hidden="true"></div>
+      <div className="hero-geom-box-slate box-1" aria-hidden="true"></div>
+      <div className="hero-geom-box-slate box-2" aria-hidden="true"></div>
+      <div className="hero-geom-arc arc-1" aria-hidden="true"></div>
+      <div className="hero-geom-arc arc-2" aria-hidden="true"></div>
+
       <div className="container">
         <div className="hero-grid">
           {/* Left Column: Text & Actions */}
           <div className="hero-text-content">
+            {/* Pill badge matching screenshot */}
             <div className="hero-badge-wrap">
-              <span className="pulse-dot"></span>
-              <span>Open for Software Developer Roles</span>
+              <span>SOFTWARE DEVELOPER</span>
             </div>
 
-            <p className="hero-greeting">Hi, I'm</p>
             <h1 className="hero-name">
-              Shrikar <span className="text-gradient">Bhorkade</span>
+              Shrikar Bhorkade
             </h1>
 
             <div className="hero-title-tag">
-              <Terminal size={18} color="#38bdf8" />
-              <span>Software Developer | MCA</span>
+              <Terminal size={18} style={{ color: 'var(--accent-primary)' }} />
+              <span>Software Developer | MCA Student</span>
             </div>
 
             <p className="hero-summary">
-              MCA student with a strong foundation in full-stack web development,
-              data structures, and AI/ML workflows. Passionate about building robust, high-performance
-              applications that solve real-world problems.
+              I transform ideas into digital realities, focusing on creating unique, high-performance web systems,
+              AI/ML workflows, and scalable software applications.
             </p>
 
             {/* Action Buttons */}
             <div className="hero-cta-group">
               <button
                 className="btn btn-primary"
+                id="hero-reachout-btn"
+                onClick={() => scrollToSection('contact')}
+              >
+                <span>Reach out</span>
+                <ArrowUpRight size={17} />
+              </button>
+
+              <button
+                className="btn btn-secondary"
                 id="hero-view-projects-btn"
                 onClick={() => scrollToSection('projects')}
               >
@@ -70,23 +87,15 @@ export default function Hero() {
               </button>
 
               <a
-                href="/resume/Shrikar-Bhorkade-Resume.pdf"
-                download="Shrikar-Bhorkade-Resume.pdf"
-                className="btn btn-secondary"
+                href="https://drive.google.com/file/d/1HAxnaK0TbqGrFXlCiqakufnYEd83Bh1W/view?usp=drivesdk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline"
                 id="hero-download-resume-btn"
               >
                 <Download size={17} />
-                <span>Download Resume</span>
+                <span>Resume</span>
               </a>
-
-              <button
-                className="btn btn-outline"
-                id="hero-contact-btn"
-                onClick={() => scrollToSection('contact')}
-              >
-                <Mail size={17} />
-                <span>Contact Me</span>
-              </button>
             </div>
 
             {/* Social Links */}
@@ -126,7 +135,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: MCA Student Developer Visual with Subtle Animations */}
+          {/* Right Column: MCA Student Developer Visual */}
           <div className="hero-visual-container">
             {/* Subtle Floating Code Elements */}
             <div className="floating-code-pill pill-top-right">
@@ -135,7 +144,7 @@ export default function Hero() {
             </div>
 
             <div className="floating-code-pill pill-bottom-left">
-              <Check size={13} color="#10b981" />
+              <Check size={13} style={{ color: 'var(--accent-primary)' }} />
               <span>status: active_coding</span>
             </div>
 
@@ -166,8 +175,8 @@ export default function Hero() {
               {/* IDE Code Footer with live typing simulation */}
               <div className="ide-code-footer">
                 <div>
-                  <span style={{ color: '#38bdf8' }}>&gt;</span>{' '}
-                  <span style={{ color: '#e2e8f0' }}>{typedCode}</span>
+                  <span style={{ color: 'var(--accent-primary)' }}>&gt;</span>{' '}
+                  <span style={{ color: 'var(--text-secondary)' }}>{typedCode}</span>
                   <span className="live-cursor-blink" aria-hidden="true"></span>
                 </div>
               </div>

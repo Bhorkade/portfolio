@@ -12,6 +12,12 @@ import {
   Wrench,
   Binary,
   Server,
+  Cloud,
+  Box,
+  Send,
+  FileText,
+  Network,
+  Cpu,
 } from 'lucide-react';
 
 const SKILL_CATEGORIES = [
@@ -36,6 +42,15 @@ const SKILL_CATEGORIES = [
     ],
   },
   {
+    category: 'Backend Development',
+    icon: Server,
+    skills: [
+      { name: 'Node.js', icon: Cpu, highlight: 'Server-Side JavaScript' },
+      { name: 'Express.js', icon: Layers, highlight: 'REST API & Backend' },
+      { name: 'REST API', icon: Network, highlight: 'API Development' },
+    ],
+  },
+  {
     category: 'AI & Data Science',
     icon: Brain,
     skills: [
@@ -53,12 +68,22 @@ const SKILL_CATEGORIES = [
     ],
   },
   {
+    category: 'Cloud & Deployment',
+    icon: Cloud,
+    skills: [
+      { name: 'AWS', icon: Cloud, highlight: 'Cloud & Deployment' },
+      { name: 'Docker', icon: Box, highlight: 'Containerization' },
+    ],
+  },
+  {
     category: 'Tools & Workflow',
     icon: Wrench,
     skills: [
       { name: 'Git', icon: GitBranch, highlight: 'Version Control' },
       { name: 'GitHub', icon: GitBranch, highlight: 'Collaboration & CI' },
       { name: 'VS Code', icon: Terminal, highlight: 'Dev Environment' },
+      { name: 'Postman', icon: Send, highlight: 'API Testing' },
+      { name: 'MS Word', icon: FileText, highlight: 'Document & Formatting' },
     ],
   },
 ];
@@ -88,7 +113,7 @@ export default function Skills() {
             return (
               <div key={catGroup.category} className="skills-category-group">
                 <div className="category-title-wrap">
-                  <CatIcon size={20} color="#00f2fe" />
+                  <CatIcon size={20} style={{ color: 'var(--accent-primary)' }} />
                   <h3 className="category-title">{catGroup.category}</h3>
                   <span className="category-count">{catGroup.skills.length} skills</span>
                 </div>
@@ -106,7 +131,7 @@ export default function Skills() {
                           <SkillIcon size={24} />
                         </div>
                         <h4 className="skill-name">{skill.name}</h4>
-                        <span className="code-font" style={{ fontSize: '0.75rem', color: '#64748b' }}>
+                        <span className="code-font" style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
                           {skill.highlight}
                         </span>
                       </div>

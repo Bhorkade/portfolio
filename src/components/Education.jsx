@@ -51,7 +51,7 @@ export default function Education() {
                 </div>
 
                 <div className="edu-institution" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <MapPin size={16} color="#00f2fe" />
+                  <MapPin size={16} style={{ color: 'var(--accent-primary)' }} />
                   <span>{edu.institution}</span>
                 </div>
 
@@ -64,20 +64,20 @@ export default function Education() {
                 style={{
                   marginTop: '24px',
                   paddingTop: '16px',
-                  borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                  borderTop: '1px solid var(--border-default)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                 }}
               >
-                <span className="code-font" style={{ fontSize: '0.85rem', color: '#94a3b8' }}>
+                <span className="code-font" style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                   Academic Performance
                 </span>
                 <span
                   style={{
                     fontFamily: 'var(--font-mono)',
                     fontWeight: 700,
-                    color: '#34d399',
+                    color: 'var(--accent-emerald)',
                     background: 'rgba(16, 185, 129, 0.1)',
                     padding: '4px 12px',
                     borderRadius: '9999px',

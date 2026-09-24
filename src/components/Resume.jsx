@@ -14,9 +14,12 @@ import {
   FolderGit2,
 } from 'lucide-react';
 
+const GOOGLE_DRIVE_RESUME_URL = 'https://drive.google.com/file/d/1HAxnaK0TbqGrFXlCiqakufnYEd83Bh1W/view?usp=drivesdk';
+const GOOGLE_DRIVE_PREVIEW_URL = 'https://drive.google.com/file/d/1HAxnaK0TbqGrFXlCiqakufnYEd83Bh1W/preview';
+const RESUME_FILE_NAME = "Shrikar's_Resume.pdf";
+
 export default function Resume() {
   const [showModal, setShowModal] = useState(false);
-  const resumeUrl = '/resume/Shrikar-Bhorkade-Resume.pdf';
 
   return (
     <section id="resume" className="section-wrapper">
@@ -38,42 +41,43 @@ export default function Resume() {
         {/* Action Bar Above Sheet */}
         <div className="resume-toolbar">
           <div className="resume-toolbar-info">
-            <FileText size={18} color="#38bdf8" />
-            <span style={{ fontWeight: 600 }}>Shrikar-Bhorkade-Resume.pdf</span>
-            <span className="code-font" style={{ fontSize: '0.78rem', color: '#94a3b8' }}>
-              • Updated Version
+            <FileText size={18} style={{ color: 'var(--accent-primary)' }} />
+            <span style={{ fontWeight: 600 }}>{RESUME_FILE_NAME}</span>
+            <span className="code-font" style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+              • Official Resume
             </span>
           </div>
 
           <div className="resume-toolbar-actions">
-            <a
-              href={resumeUrl}
-              download="Shrikar-Bhorkade-Resume.pdf"
-              className="btn btn-primary btn-sm"
-              id="resume-download-btn"
-            >
-              <Download size={15} />
-              <span>Download PDF</span>
-            </a>
-
             <button
               onClick={() => setShowModal(true)}
-              className="btn btn-secondary btn-sm"
+              className="btn btn-primary btn-sm"
               id="resume-view-btn"
             >
               <Eye size={15} />
-              <span>Preview PDF</span>
+              <span>Preview Resume</span>
             </button>
 
             <a
-              href={resumeUrl}
+              href={GOOGLE_DRIVE_RESUME_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary btn-sm"
+              id="resume-download-btn"
+            >
+              <Download size={15} />
+              <span>Download / View</span>
+            </a>
+
+            <a
+              href={GOOGLE_DRIVE_RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-outline btn-sm"
               id="resume-open-tab-btn"
             >
               <ExternalLink size={15} />
-              <span>Open Tab</span>
+              <span>Open in Drive</span>
             </a>
           </div>
         </div>
@@ -86,17 +90,17 @@ export default function Resume() {
             <p className="resume-sheet-title">Software Developer | MCA Student</p>
             <div className="resume-sheet-contact-row">
               <span className="resume-sheet-contact-item">
-                <Mail size={13} color="#38bdf8" />
+                <Mail size={13} style={{ color: 'var(--accent-primary)' }} />
                 <a href="mailto:bhorkadeshrikar154@gmail.com">bhorkadeshrikar154@gmail.com</a>
               </span>
               <span className="resume-sheet-sep">•</span>
               <span className="resume-sheet-contact-item">
-                <Phone size={13} color="#38bdf8" />
+                <Phone size={13} style={{ color: 'var(--accent-primary)' }} />
                 <a href="tel:+918308851018">+91 8308851018</a>
               </span>
               <span className="resume-sheet-sep">•</span>
               <span className="resume-sheet-contact-item">
-                <MapPin size={13} color="#38bdf8" />
+                <MapPin size={13} style={{ color: 'var(--accent-primary)' }} />
                 <span>Maharashtra, India</span>
               </span>
             </div>
@@ -107,7 +111,7 @@ export default function Resume() {
           {/* EDUCATION */}
           <div className="resume-sheet-section">
             <div className="resume-sheet-section-title">
-              <GraduationCap size={16} color="#38bdf8" />
+              <GraduationCap size={16} style={{ color: 'var(--accent-primary)' }} />
               <span>EDUCATION</span>
             </div>
 
@@ -133,7 +137,7 @@ export default function Resume() {
           {/* TECHNICAL SKILLS */}
           <div className="resume-sheet-section">
             <div className="resume-sheet-section-title">
-              <Code2 size={16} color="#38bdf8" />
+              <Code2 size={16} style={{ color: 'var(--accent-primary)' }} />
               <span>TECHNICAL SKILLS</span>
             </div>
 
@@ -166,7 +170,7 @@ export default function Resume() {
           {/* EXPERIENCE */}
           <div className="resume-sheet-section">
             <div className="resume-sheet-section-title">
-              <Briefcase size={16} color="#38bdf8" />
+              <Briefcase size={16} style={{ color: 'var(--accent-primary)' }} />
               <span>EXPERIENCE</span>
             </div>
 
@@ -194,14 +198,14 @@ export default function Resume() {
           {/* PROJECTS */}
           <div className="resume-sheet-section">
             <div className="resume-sheet-section-title">
-              <FolderGit2 size={16} color="#38bdf8" />
+              <FolderGit2 size={16} style={{ color: 'var(--accent-primary)' }} />
               <span>PROJECTS</span>
             </div>
 
             <ul className="resume-sheet-projects-list">
               <li>
                 <strong>Ladki Bahin Yojana Information Website</strong>{' '}
-                <span className="code-font" style={{ fontSize: '0.8rem', color: '#94a3b8' }}>
+                <span className="code-font" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                   (HTML, CSS, JS, Vercel)
                 </span>
                 <p className="resume-sheet-sub">
@@ -211,7 +215,7 @@ export default function Resume() {
 
               <li>
                 <strong>Personal Portfolio Website</strong>{' '}
-                <span className="code-font" style={{ fontSize: '0.8rem', color: '#94a3b8' }}>
+                <span className="code-font" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                   (HTML, CSS, JS, React)
                 </span>
                 <p className="resume-sheet-sub">
@@ -221,7 +225,7 @@ export default function Resume() {
 
               <li>
                 <strong>Online Blood Management System</strong>{' '}
-                <span className="code-font" style={{ fontSize: '0.8rem', color: '#94a3b8' }}>
+                <span className="code-font" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                   (HTML, CSS, JS, MySQL)
                 </span>
                 <p className="resume-sheet-sub">
@@ -231,7 +235,7 @@ export default function Resume() {
 
               <li>
                 <strong>Daily Sales Management System</strong>{' '}
-                <span className="code-font" style={{ fontSize: '0.8rem', color: '#94a3b8' }}>
+                <span className="code-font" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                   (C++, OOP, STL Vector)
                 </span>
                 <p className="resume-sheet-sub">
@@ -242,7 +246,7 @@ export default function Resume() {
           </div>
         </div>
 
-        {/* In-App Resume Preview Modal */}
+        {/* In-App Resume Preview Modal displaying Google Drive Preview */}
         {showModal && (
           <div
             className="modal-backdrop"
@@ -256,17 +260,18 @@ export default function Resume() {
             >
               <div className="modal-header">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <FileText size={18} color="#38bdf8" />
-                  <span className="modal-title">Shrikar-Bhorkade-Resume.pdf</span>
+                  <FileText size={18} style={{ color: 'var(--accent-primary)' }} />
+                  <span className="modal-title">{RESUME_FILE_NAME}</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <a
-                    href={resumeUrl}
-                    download="Shrikar-Bhorkade-Resume.pdf"
+                    href={GOOGLE_DRIVE_RESUME_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn btn-primary btn-sm"
                   >
-                    <Download size={13} />
-                    <span>Download</span>
+                    <ExternalLink size={13} />
+                    <span>Open in Drive</span>
                   </a>
                   <button
                     className="modal-close-btn"
@@ -279,9 +284,10 @@ export default function Resume() {
               </div>
               <div className="modal-body">
                 <iframe
-                  src={resumeUrl}
-                  title="Shrikar Bhorkade Resume PDF Preview"
+                  src={GOOGLE_DRIVE_PREVIEW_URL}
+                  title="Shrikar Bhorkade Latest Resume Preview"
                   className="pdf-iframe"
+                  allow="autoplay"
                 />
               </div>
             </div>

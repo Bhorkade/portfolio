@@ -10,9 +10,9 @@ export default function Footer() {
     <footer className="footer-wrapper">
       <div className="container footer-inner">
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Code2 size={20} color="#00f2fe" />
+          <Code2 size={20} style={{ color: 'var(--accent-primary)' }} />
           <span style={{ fontWeight: 600 }}>Shrikar Bhorkade</span>
-          <span style={{ color: '#64748b' }}>• MCA Student & Software Developer</span>
+          <span style={{ color: 'var(--text-muted)' }}>• MCA Student & Software Developer</span>
         </div>
 
         <p className="footer-copy">
