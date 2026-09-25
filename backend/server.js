@@ -15,6 +15,14 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // ================================
+// VERCEL / REVERSE PROXY
+// ================================
+// Trust Vercel's reverse proxy so
+// express-rate-limit can correctly
+// determine the client IP.
+app.set('trust proxy', 1);
+
+// ================================
 // CORS
 // ================================
 const allowedOrigins = [
@@ -119,5 +127,7 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
-// Export Express app for Vercel
+// ================================
+// EXPORT EXPRESS APP FOR VERCEL
+// ================================
 export default app;
