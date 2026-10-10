@@ -58,13 +58,6 @@ export default function CustomCursor() {
         return;
       }
 
-      // If inside a section, verify the section is active
-      const section = interactive.closest('section');
-      if (section && !section.classList.contains('is-active')) {
-        if (isHoveredRef.current) setIsHovered(false);
-        return;
-      }
-
       if (!isHoveredRef.current) setIsHovered(true);
     };
 

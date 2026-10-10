@@ -31,15 +31,20 @@ export function SectionProvider({ children }) {
         const el = document.getElementById(id);
         if (!el) return;
         if (id === newActiveId) {
-          if (!el.classList.contains('is-active')) {
-            el.classList.add('is-active', 'active-section');
-            el.setAttribute('data-active-section', 'true');
-          }
+          el.classList.add('is-active', 'active-section');
+          el.setAttribute('data-active-section', 'true');
         } else {
-          if (el.classList.contains('is-active')) {
-            el.classList.remove('is-active', 'active-section');
-            el.setAttribute('data-active-section', 'false');
-          }
+          el.classList.remove('is-active', 'active-section');
+          el.setAttribute('data-active-section', 'false');
+
+          // Strip any lingering hover states on non-active section cards
+          el.querySelectorAll(
+            '.glass-card, .project-card, .skill-card, .cert-card, .highlight-box, .hero-visual-card'
+          ).forEach((card) => {
+            if (card !== hoveredElementRef.current) {
+              card.classList.add('force-no-hover');
+            }
+          });
         }
       });
     };
@@ -51,15 +56,14 @@ export function SectionProvider({ children }) {
       mousePosRef.current.x = e.clientX;
       mousePosRef.current.y = e.clientY;
 
-      // Real mouse movement naturally restores accurate browser hover
-      const forcedElements = document.querySelectorAll('.force-no-hover');
-      if (forcedElements.length > 0) {
-        forcedElements.forEach((el) => el.classList.remove('force-no-hover'));
-      }
-
       const target = e.target.closest(
         '.glass-card, .project-card, .skill-card, .cert-card, .highlight-box, .hero-visual-card, .feature-item-card, .education-card, .timeline-card, .contact-info-card, .contact-form-card, .btn, .nav-reachout-btn'
       );
+
+      // Real mouse movement directly on a target restores hover immediately
+      if (target) {
+        target.classList.remove('force-no-hover');
+      }
 
       hoveredElementRef.current = target || null;
     };

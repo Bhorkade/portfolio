@@ -381,34 +381,34 @@ h1, h2, h3, h4, h5, h6 {
    SCROLL & SECTION HOVER-STATE SYNCHRONIZATION
    ========================================================================== */
 
-/* 1. Prevent inactive sections from retaining stuck hover or active visual states */
-section:not(.is-active) .glass-card,
-section:not(.is-active) .project-card,
-section:not(.is-active) .skill-card,
-section:not(.is-active) .cert-card,
-section:not(.is-active) .education-card,
-section:not(.is-active) .timeline-card,
-section:not(.is-active) .contact-info-card,
-section:not(.is-active) .contact-form-card,
-section:not(.is-active) .feature-item-card,
-section:not(.is-active) .highlight-box,
-section:not(.is-active) .hero-visual-card {
+/* 1. Prevent out-of-view sections from retaining stuck hover or active visual states */
+section:not(.in-view) .glass-card,
+section:not(.in-view) .project-card,
+section:not(.in-view) .skill-card,
+section:not(.in-view) .cert-card,
+section:not(.in-view) .education-card,
+section:not(.in-view) .timeline-card,
+section:not(.in-view) .contact-info-card,
+section:not(.in-view) .contact-form-card,
+section:not(.in-view) .feature-item-card,
+section:not(.in-view) .highlight-box,
+section:not(.in-view) .hero-visual-card {
   transform: none !important;
   border-color: var(--border-default) !important;
   box-shadow: var(--card-shadow) !important;
 }
 
-section:not(.is-active) .project-card .project-img {
+section:not(.in-view) .project-card .project-img {
   transform: none !important;
 }
 
-section:not(.is-active) .skill-card .skill-icon-wrap {
+section:not(.in-view) .skill-card .skill-icon-wrap {
   transform: none !important;
   border-color: var(--border-default) !important;
   background: var(--bg-secondary) !important;
 }
 
-section:not(.is-active) .project-card .tech-tag {
+section:not(.in-view) .project-card .tech-tag {
   border-color: var(--border-default) !important;
   color: var(--text-muted) !important;
 }
